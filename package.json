@@ -1,0 +1,32 @@
+{
+  "version": "0.0.5",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "build": "tsc",
+    "start": "node index.js",
+    "test": "jest",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "precommit": "lint-staged",
+    "postinstall": "husky install",
+    "test-sample": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prettier": "^3.0.0",
+    "@types/cache-manager-redis-store": "^2.0.4",
+    "@nestjs/testing": "^10.0.0",
+    "@pontem/liquidswap-sdk": "^0.7.0",
+    "@nestjs/swagger": "^7.1.17",
+    "express-basic-auth": "^1.2.1",
+    "source-map-support": "^0.5.21",
+    "rxjs": "^7.8.1",
+    "@nestjs/common": "^10.3.0",
+    "@sentry/profiling-node": "^7.108.0",
+    "@aptos-labs/ts-sdk": "^1.9.1"
+  }
+}

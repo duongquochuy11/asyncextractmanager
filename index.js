@@ -1,9 +1,21 @@
-function maxSubArray(nums) {
-  let maxSum = nums[0];
-  let currentSum = nums[0];
-  for (let i = 1; i < nums.length; i++) {
-    currentSum = Math.max(nums[i], currentSum + nums[i]);
-    maxSum = Math.max(maxSum, currentSum);
+const combSort = (arr) => {
+  const shrinkFactor = 1.3;
+  let gap = arr.length;
+  let swapped = true;
+  while (gap > 1 || swapped) {
+    gap = Math.floor(gap / shrinkFactor);
+    if (gap < 1) {
+      gap = 1;
+    }
+    swapped = false;
+    let i = 0;
+    while (i + gap < arr.length) {
+      if (arr[i] > arr[i + gap]) {
+        [arr[i], arr[i + gap]] = [arr[i + gap], arr[i]];
+        swapped = true;
+      }
+      i++;
+    }
   }
-  return maxSum;
-}
+  return arr;
+};
